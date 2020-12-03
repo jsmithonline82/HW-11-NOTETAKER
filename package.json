@@ -9,9 +9,8 @@
   "author": "Jackson Smith",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jsmithonline82/HW-11-NOTETAKER.git"
