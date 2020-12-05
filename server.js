@@ -19,15 +19,15 @@ let allNotes;
 
 //Here we set our routes
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "/public/notes.html"));
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "/public/index.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.get("/api/notes", function (req, res) {
-    readFileAsync(path.join(__dirname, "/db/db.json"), "utf8")
+    readFileAsync(path.join(__dirname, "./db/db.json"), "utf8")
         .then(function (data) {
             return res.json(JSON.parse(data));
         });
@@ -35,7 +35,7 @@ app.get("/api/notes", function (req, res) {
 
 app.post("/api/notes", function (req, res) {
     var newNote = req.body;
-    readFileAsync(path.join(__dirname, "/db/db.json"), "utf8")
+    readFileAsync(path.join(__dirname, "./db/db.json"), "utf8")
         .then(function (data) {
             allNotes = JSON.parse(data);
             if (newNote.id || newNote.id === 0) {
@@ -45,7 +45,7 @@ app.post("/api/notes", function (req, res) {
             } else {
                 allNotes.push(newNote);
             }
-            writefileAsync(path.join(__dirname, "/db/db.json"), JSON.stringify(allNotes))
+            writefileAsync(path.join(__dirname, "./db/db.json"), JSON.stringify(allNotes))
                 .then(function () {
                     console.log("Wrote db.json");
                 })
@@ -55,11 +55,11 @@ app.post("/api/notes", function (req, res) {
 
 app.delete("/api/notes/:id", function (req, res) {
     var id = req.params.id;
-    readFileAsync(path.join(__dirname, "/db/db.json"), "utf8")
+    readFileAsync(path.join(__dirname, "./db/db.json"), "utf8")
         .then(function (data) {
             allNotes = JSON.parse(data);
             allNotes.splice(id, 1);
-            writefileAsync(path.join(__dirname, "/db/db.json"), JSON.stringify(allNotes))
+            writefileAsync(path.join(__dirname, "./db/db.json"), JSON.stringify(allNotes))
                 .then(function () {
                     console.log("Deleted db.json");
                 })
