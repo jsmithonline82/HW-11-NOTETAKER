@@ -4,6 +4,8 @@
 
 [![](http://img.youtube.com/vi/uY2RtqaRu4s/0.jpg)](http://www.youtube.com/watch?v=uY2RtqaRu4s "READ ME")
 
+[link to Deployed App](https://jso-notetaker.herokuapp.com/)
+
 Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
 
 * The application frontend has already been created, it's your job to build the backend and connect the two.
